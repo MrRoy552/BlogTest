@@ -4,6 +4,7 @@ from rest_framework import viewsets,status
 from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework.response import Response
 from .pagination import*
+from .renderes import*
 
 
 
@@ -13,6 +14,7 @@ class blogView(viewsets.ModelViewSet):
     http_method_names=['post','get','put']
     permission_classes=[IsAuthenticated]
     pagination_class = CustomPagination
+    renderer_classes = (commonResponse,)
 
 
 class userRegister(viewsets.ModelViewSet):
@@ -20,5 +22,6 @@ class userRegister(viewsets.ModelViewSet):
     serializer_class=UserRegistrationSerializer
     http_method_names=['post','get']
     permission_classes=[AllowAny,]
+    renderer_classes = (commonResponse,)
 
 

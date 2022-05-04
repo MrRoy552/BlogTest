@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'Blog',
     'drf_yasg',
+    'rest_framework.authtoken',
 
 ]
 

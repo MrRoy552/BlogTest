@@ -22,11 +22,10 @@ from rest_framework import permissions
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Authentication api",
+        title="Blog Assignment",
         default_version="v1",
         description="Accoounts",
-        terms_of_service="https://www.promena.net/en",
-        contact=openapi.Contact(email="sathya@promena.in"),
+        contact=openapi.Contact(email="pankajroy.roy3@gmail.com"),
         license=openapi.License(name="pankaj")
     ),
     public=True,
@@ -36,7 +35,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/',include('Blog.urls')),
-    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     
 ]

@@ -33,7 +33,7 @@ class User(AbstractUser):
     
 class Blog(models.Model):
     Author=models.ForeignKey(User,on_delete=models.CASCADE,related_name='article')
-    Titel=models.CharField(max_length=200)
+    Title=models.CharField(max_length=200)
     Body=models.TextField()
     created_At = models.DateTimeField(default=timezone.now)
     updated_At = models.DateTimeField(default=timezone.now)
